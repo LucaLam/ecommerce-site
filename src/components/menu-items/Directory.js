@@ -9,7 +9,7 @@ export class Directory extends Component {
             title: 'hats',
             imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
             id: 1,
-            linkUrl: 'shop/hats'
+            linkUrl: 'shop/hats',
           },
           {
             title: 'jackets',
@@ -43,8 +43,8 @@ export class Directory extends Component {
         return (
             <div className="directory-menu">
             {
-                this.state.sections.map(({title, imageUrl, id, size}) => (
-                    <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+                this.state.sections.map(({id, ...otherSectionProps }) => (
+                    <MenuItem key={id} {...otherSectionProps} />
                 ))
             }
             </div>
