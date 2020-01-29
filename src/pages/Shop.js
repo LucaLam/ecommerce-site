@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import SHOP_DATA from './shopData';
-import PreviewCollection from '../components/PreviewCollection';
+import PreviewCollection from '../components/PreviewCollection.js';
 
 export class Shop extends Component {
     state = {

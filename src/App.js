@@ -7,8 +7,38 @@ import Shop from './pages/Shop';
 import SignInSignup from './pages/SignInSignUp';
 import Header from './components/Header';
 
+import { auth } from './firebase/firebase.utils';
 
-function App() {
+
+class App extends React.Component {
+
+  constructor(){
+    super();
+
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({ currentUser: user });
+
+      console.log(user);
+    })
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+  
+  
+
+
+  render(){
   return (
     <div>
       <Header />
@@ -19,6 +49,8 @@ function App() {
       </Switch>
     </div>
   );
+}
+
 }
 
 export default App;
