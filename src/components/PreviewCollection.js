@@ -2,7 +2,7 @@ import React from 'react'
 
 import CollectionItem from './CollectionItem.js';
 import './previewCollectionStyle.scss';
- 
+
 const PreviewCollection = ({title, items}) => (
     
             <div className='collection-preview'>
@@ -16,7 +16,7 @@ const PreviewCollection = ({title, items}) => (
                 }
                 </div>
             </div>
-)
+);
 
 
-export default PreviewCollection
+export default PreviewCollection;
